@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en" style="height: 100%;">
+
+<head>
+  <title>Little Witch Nobeta</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #indeximge {
+      height: 100%;
+      width: 100%;
+      background-size: 110% 110%;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+    }
+
+    #render {
+      height: 100%;
+      width: 100%;
+      background-size: 110% 110%;
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      animation: mymove 5s infinite;
+    }
+
+    #ill01 {
+      height: 100%;
+      width: 100%;
+      background-size: 112% 112%;
+      background-repeat: no-repeat;
+      background-position: 55% 55%;
+      animation: sword 5s infinite;
+    }
+
+    #shine {
+      height: 100%;
+      width: 100%;
+      background-size: 110% 110%;
+      background-position: 53% 52%;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transform-origin: 55% 33.5%;
+      animation: light 5s infinite;
+      animation-delay: 3s;
+    }
+
+    #shine02 {
+      height: 100%;
+      width: 100%;
+      background-position: 55% 45%;
+      opacity: 1;
+
+    }
+
+    html {
+      overflow: -moz-hidden-unscrollable;
+      height: 100%;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      -ms-overflow-style: none;
+      height: 100%;
+      width: calc(100vw + 18px);
+      overflow: hidden;
+    }
+
+    @keyframes mymove {
+      50% {
+        background-position: 50% 60%;
+      }
+
+    }
+
+    @keyframes sword {
+      20% {
+        background-position: 60% 52%;
+        transform: rotate(1deg);
+      }
+
+    }
+
+    @keyframes light {
+      20% {
+        background-position: 50% 55%;
+        opacity: 1;
+        transform: rotate(360deg);
+      }
+
+    }
+
+    @keyframes fload {
+
+      from {
+        opacity: 0;
+        background-position: 100% 100%;
+      }
+
+      to {
+        opacity: 1;
+        background-position: 50% 50%;
+      }
+    }
+
+    @keyframes shine {
+
+      from {
+        background-size: 0% 0%;
+        background-position: 55% 35%;
+      }
+
+      to {
+        background-size: 2000% 2000%;
+        background-position: 50% 50%;
+      }
+    }
+  </style>
+</head>
+
+<body onload="LoadFirst()">
+
+  <div id="indeximge" style="background-image: url(img/back.jpg);">
+    <div id="render" style="background-image: url(img/nobeta.png);">
+      <div id="ill01" style="background-image: url(img/sword.png);">
+
+        <a href="#" onClick="delayURL('firstpage.html',2000)">
+          <div id="shine" style="background-image: url(img/light.png);">
+
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+  <!-- <div id="shine02" style="background-image: url(img/1.png);">      </div> -->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>/*切換動畫功能*/
+    function myFunction(e) {
+      var x = e.clientX;
+      var y = e.clientY;
+
+      var el = document.getElementById("indeximge");
+      var xx = x - (el.style.width / 2);
+      var yy = y - (el.style.height / 2);
+      var xxx = 50 + (xx / 200);
+      var yyy = 50 + (yy / 200);
+      el.style.backgroundPositionX = xxx + "%";
+      el.style.backgroundPositionY = yyy + "%";
+    }
+
+    function clearCoor() {
+      var el = document.getElementById("indeximge");
+      el.style.backgroundPositionX = 50 + "%";
+      el.style.backgroundPositionY = 50 + "%";
+    }
+    function LoadFirst() {
+      var el = document.getElementById("render");
+      el.style.animation = "fload 1s";
+      setTimeout(Loadend, 1100);
+    }
+    function Loadend() {
+      var el = document.getElementById("render");
+      el.style.animation = "mymove 5s infinite";
+    }
+    function delayURL(url, time) {
+      var el = document.getElementById("shine");
+      var sword =document.getElementById("ill01");
+      sword.style.animationPlayState="paused";
+      sword.style.transform = "rotate(0deg)";
+      el.style.transform = "rotate(0deg)";
+      el.style.opacity = 1;
+      el.style.backgroundImage = "url(img/4.png)";
+      el.style.animation = "shine 5s ";
+     
+      setTimeout("top.location.href = '" + url + "'", time);
+
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

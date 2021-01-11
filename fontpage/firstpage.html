@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Little Witch Nobeta</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript">
+        //隨機播放陣列中指定的圖檔
+              var jsImg = new Array("img/background/move/move01.jpg","img/background/move/move02.jpg");
+              //設定每兩秒執行一次randomImg() ，此行要在 function 之外
+              setInterval("randomImg()",2000);
+              function randomImg(){
+              //陣列的長度 * 介於0~1間數字 ，然後在取 floor 當照片索引值
+              var imgIndex = Math.floor(Math.random()*jsImg.length);
+              document.getElementById("my_div").innerHTML  = "<img src='"+jsImg[imgIndex]+"' width=100%>";
+              }      
+      
+      </script>
+    <style>
+      #indeximge {
+        height: 100%;
+        width: 100%;
+        background-size: 110% 110%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+  
+      #render {
+        height: 100%;
+        width: 100%;
+        background-size: 110% 110%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        animation: mymove 5s infinite;
+      }
+  
+      #ill01 {
+        height: 100%;
+        width: 100%;
+        background-size: 112% 112%;
+        background-repeat: no-repeat;
+        background-position: 55% 55%;
+        animation: sword 5s infinite;
+      }
+      #ill02 {
+        height: 100%;
+        width: 100%;
+        animation: swordrend 5s infinite;
+      }
+  
+      #shine {
+        height: 100%;
+        width: 100%;
+        background-size: 110% 110%;
+        background-position: 53% 52%;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transform-origin: 55% 33.5%;
+        animation: light 5s infinite;
+        animation-delay: 3s;
+      }
+  
+      #shine02 {
+        height: 100%;
+        width: 100%;
+        background-position: 55% 45%;
+        opacity: 1;
+  
+      }
+  
+      html {
+        overflow: -moz-hidden-unscrollable;
+        height: 100%;
+      }
+  
+      body::-webkit-scrollbar {
+        display: none;
+      }
+  
+      body {
+        -ms-overflow-style: none;
+        height: 100%;
+        width: calc(100vw + 18px);
+        /* overflow: hidden; */
+      }
+  
+      @keyframes mymove {
+        50% {
+          background-position: 50% 60%;
+        }
+  
+      }
+  
+      @keyframes sword {
+        20% {
+          background-position: 60% 52%;
+          transform: rotate(1deg);
+        }
+  
+      }
+      @keyframes swordrend {
+        20% {
+          
+          transform: rotate(-1deg);
+        }
+  
+      }
+  
+      @keyframes light {
+        20% {
+          background-position: 50% 55%;
+          opacity: 1;
+          transform: rotate(360deg);
+        }
+  
+      }
+  
+      @keyframes fload {
+  
+        from {
+          opacity: 0;
+          background-position: 100% 100%;
+        }
+  
+        to {
+          opacity: 1;
+          background-position: 50% 50%;
+        }
+      }
+  
+      @keyframes shine {
+  
+        from {
+          background-size: 0% 0%;
+          background-position: 55% 35%;
+        }
+  
+        to {
+          background-size: 2000% 2000%;
+          background-position: 50% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body >
+      <header >
+        <div class="mg"><img src="img/mg.png" alt="mg"></div>
+     <div class="container">
+          <div class="head_bar">
+            <div class="row">
+                <div class="col-md-4 col-sm-12" >
+                   <h1 class="header_logo"><img src="img/logo.png" width="40%" alt="logo"></h1> 
+                    </div>  
+                <div class="col-md-8 col-sm-12">
+                    <ul class="nav justify-content-row">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="firstpage.html">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="story.html">故事</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="role.html">角色</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="illustration.html">插圖</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="play.html">玩法</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="download.html">下載</a>
+                        </li>
+                    </ul>
+                    </div>
+         </div>
+    </div>    
+      </div>
+    </header>
+    
+
+  <div id="indeximge" style="background-image: url(img/back.jpg);">
+    <div id="render" style="background-image: url(img/nobeta.png);">
+      <!-- <div  style="background-color: rgba(240, 248, 255, 0.534); height: 100%;z-index: 1;"></div> -->
+      <div id="ill01" style="background-image: url(img/sword.png);z-index: -10;top:0px;">
+      <div id="ill02" style="background-color: rgba(240, 248, 255, 0.534); ">
+        <div class="row">
+          
+          <body onload="sequentialImg();">
+            <!-- <body onload="randomImg();">  -->
+            <div id="my_div" ></div> <!--把前面這個 div 放到你想輪播圖片的位置去 -->
+            </body>
+        </div>
+        <div class="row" >
+
+            <iframe style="margin: auto;"  src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FLittleWitchNobeta%2Fvideos%2F616014062433357%2F&show_text=false&width=560" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+
+        </div>
+        <div class="row">
+          <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">魔力吸収陣万能ですね！<a href="https://twitter.com/hashtag/LittleWitchNobeta?src=hash&amp;ref_src=twsrc%5Etfw">#LittleWitchNobeta</a><a href="https://twitter.com/hashtag/%E3%83%AA%E3%83%88%E3%83%AB%E3%82%A6%E3%82%A3%E3%83%83%E3%83%81%E3%83%8E%E3%83%99%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#リトルウィッチノベタ</a> <a href="https://t.co/PgS1HTse8k">pic.twitter.com/PgS1HTse8k</a></p>&mdash; 【公式】リトルウィッチノベタ Little Witch Nobeta (@nobeta_staff) <a href="https://twitter.com/nobeta_staff/status/1340179209101008898?ref_src=twsrc%5Etfw">December 19, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        
+          <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">【グッズ紹介】<br>「リトルウィッチノベタ」のグッズは好評予約受付中！<br>1月15日までのご予約は確実にご用意いたします！<br><br>アクリルキーホルダーセットはノベタ、モニカ、タニアの可愛いちびキャラをデザイン♪<br><br>▼詳細はこちら<a href="https://t.co/yO2MaJScSW">https://t.co/yO2MaJScSW</a><a href="https://twitter.com/hashtag/LittleWitchNobeta?src=hash&amp;ref_src=twsrc%5Etfw">#LittleWitchNobeta</a><a href="https://twitter.com/hashtag/%E3%83%AA%E3%83%88%E3%83%AB%E3%82%A6%E3%82%A3%E3%83%83%E3%83%81%E3%83%8E%E3%83%99%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#リトルウィッチノベタ</a> <a href="https://t.co/Jw2Qw3fSxm">pic.twitter.com/Jw2Qw3fSxm</a></p>&mdash; 【公式】リトルウィッチノベタ Little Witch Nobeta (@nobeta_staff) <a href="https://twitter.com/nobeta_staff/status/1346290325229334530?ref_src=twsrc%5Etfw">January 5, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          
+          <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">あけましておめでとうございます<a href="https://twitter.com/hashtag/LittleWitchNobeta?src=hash&amp;ref_src=twsrc%5Etfw">#LittleWitchNobeta</a><a href="https://twitter.com/hashtag/%E3%83%AA%E3%83%88%E3%83%AB%E3%82%A6%E3%82%A3%E3%83%83%E3%83%81%E3%83%8E%E3%83%99%E3%82%BF?src=hash&amp;ref_src=twsrc%5Etfw">#リトルウィッチノベタ</a> <a href="https://t.co/K9NUpc9zsP">pic.twitter.com/K9NUpc9zsP</a></p>&mdash; 【公式】リトルウィッチノベタ Little Witch Nobeta (@nobeta_staff) <a href="https://twitter.com/nobeta_staff/status/1344660117640290304?ref_src=twsrc%5Etfw">December 31, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+        </div>      
+      </div>
+      </div>
+      </div>
+    </div>
+  </div> 
+  
+       
+    <script>
+  
+
+
+      
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+  </body>
+  
+</html>
