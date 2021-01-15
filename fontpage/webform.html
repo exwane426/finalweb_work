@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+  
+    body{
+        font-family: Microsoft JhengHei;
+    }
+    form{
+      width:50%;
+      background-color:rgba(216, 78, 54, 0.8);
+      padding:15px;
+      border-radius: 5px;
+      box-shadow: 5px 5px 7px rgba(100, 100, 100, 0.5);
+    }
+  </style>
+<body>
+  <header >
+      <div class="container">
+           <div class="head_bar">
+             <div class="row">
+                 <div class="col-md-4 col-sm-12" >
+                    <h1 class="header_logo"><img src="img/logo.png" width="40%" alt="logo"></h1> 
+                     </div>  
+                 <div class="col-md-8 col-sm-12">
+                     <ul class="nav justify-content-row">
+                         <li class="nav-item">
+                             <a class="nav-link active" href="firstpage.html">首頁</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="story.html">故事</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="role.html">角色</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="illustration.html">插圖</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="play.html">玩法</a>
+                         </li>
+                         <li class="nav-item">
+                             <a class="nav-link" href="download.html">下載</a>
+                         </li>
+                         <li class="nav-item">
+                           <a class="nav-link" href="webform.html">留言</a>
+                       </li>
+                     </ul>
+                     </div>
+          </div>
+          
+     </div>    
+       </div>
+     </header>
+    <div class="container">
+  
+        <h2>留言板</h2>
+        <form method="post"  action="/add" encType="multipart/form-data">
+          Game: <input class="form-control" type="text" name="GameName" id="author" value="Little Witch Nobeta小魔女諾貝塔" readonly><br>
+          ID: <input  class="form-control"  type="text" name="ID" placeholder="玩家ID" maxlength="10" required> <br>
+          Gamer's name: <input  class="form-control"  type="text" name="GamerName" placeholder="玩家名稱" maxlength="10" required> <br>
+          Country: <select class="form-control" name="controy" id="controy">
+            <option value="" selected disabled hidden>Choose your Country</option>
+            <option value="">台灣</option>	
+            <option value="">美國</option>	
+            <option value="">日本</option>
+            <option value="">中國</option>
+            <option value="">東南亞</option>	
+            </select>
+          遊玩時數: <input class="form-control" type="number" name="time" placeholder="時間" required><br>
+          Text Color:<input class="form-control" type="color" name="color" placeholder="文字顏色" value="#FFFFFF"><br>
+          <input class="btn btn-danger" type="submit" value="Submit">
+        </form>
+      </div>
+</body>
+<script>
+    $(function(){
+      $("#id").change(function(){
+        var idx=this.selectedIndex+1;
+        var selected = $("#id option:nth-child("+idx+")").html();
+        var name=selected.split(' ')[1];
+        //console.log(name);
+        $("#author").val(name);
+      })
+      
+    })
+  </script>
+</html>

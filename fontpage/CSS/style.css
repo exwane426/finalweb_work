@@ -45,7 +45,7 @@ header{
 #storytext{
     position:absolute;
     text-align: center;
-    left: 28%;
+    left: 20%;
     z-index:2;
 
 }
@@ -104,15 +104,20 @@ header{
     width: 100%;
     z-index: 1;
 }
-#downloadpict{
+#downloadpict1{
+    position:relative;
+    z-index: 2;
+}
+#downloadpict2{
     position:relative;
     left: 20%;
-    top: 70%;
+    top: 0%;
+    z-index: 3;
 }
 .test{
     position: relative;
-    left: 20%;
-    top: 10%;
+    left: 35%;
+    top: 50%;
 }
 .test2{
     position: absolute;
@@ -139,5 +144,12 @@ header{
     }
     #storyborder{
         margin-top: 0px;
+    }
+    #storytext{
+        position:absolute;
+        text-align: center;
+        margin-top: 5%;
+        z-index:2;
+    
     }
 }
