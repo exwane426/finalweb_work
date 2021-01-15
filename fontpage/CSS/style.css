@@ -54,7 +54,7 @@ header{
 }
 .illustpict2{
     position:absolute;
-    top: 100px;
+    top: 40%;
     left: 5%;
     z-index:1;
 }
